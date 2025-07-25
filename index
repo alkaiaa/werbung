@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Werbung</title>
+<style>
+  body { margin:0; background:#000; }
+  img { width:100%; height:100vh; object-fit: contain; }
+</style>
+</head>
+<body>
+<img id="ad" src="https://example.com/werbung1.jpg" alt="Werbung">
+<script>
+  const ads = [
+    "https://example.com/werbung1.jpg",
+    "https://example.com/werbung2.jpg",
+    "https://example.com/werbung3.jpg"
+  ];
+  let index = 0;
+  function showNextAd() {
+    index = (index + 1) % ads.length;
+    document.getElementById("ad").src = ads[index];
+  }
+  setInterval(showNextAd, 30000); // alle 30 Sekunden wechseln
+</script>
+</body>
+</html>
